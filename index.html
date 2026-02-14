@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Naimur Rashid · Senior Textile Professional</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #f8fafc;
+      color: #1e2b3c;
+      line-height: 1.5;
+    }
+
+    :root {
+      --navy: #0b1e33;
+      --navy-light: #1e3a5f;
+      --white: #ffffff;
+      --grey-soft: #f1f4f8;
+      --grey-border: #dce3ec;
+      --gold: #b4945c;
+      --gold-light: #e4d7c2;
+      --shadow-sm: 0 8px 20px rgba(0, 20, 40, 0.06);
+    }
+
+    /* sticky navigation */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      background-color: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--grey-border);
+      padding: 0.8rem 2rem;
+      z-index: 100;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.2rem;
+      font-weight: 500;
+    }
+
+    .sticky-nav a {
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.4rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .sticky-nav a:hover {
+      border-bottom-color: var(--gold);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      animation: fadeUp 0.7s ease-out;
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(18px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--white);
+      border: 1.5px solid var(--grey-border);
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--navy);
+      border-left: 6px solid var(--gold);
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    /* profile image */
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--white);
+      box-shadow: 0 0 0 2px var(--gold), 0 12px 22px -8px rgba(0,0,0,0.2);
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    
+    .hero-left {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .hero-right {
+      flex: 2 1 400px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.5rem 0 0.5rem;
+      justify-content: center;
+    }
+
+    .btn {
+      background: transparent;
+      border: 1.5px solid var(--navy);
+      color: var(--navy);
+      padding: 0.75rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: white;
+    }
+
+    .btn-primary i {
+      color: var(--gold);
+    }
+
+    .btn-outline i {
+      color: var(--gold);
+    }
+
+    .btn:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+    }
+
+    .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 0.4rem 0;
+      color: #2d3f57;
+    }
+
+    .contact-line i {
+      width: 1.75rem;
+      color: var(--gold);
+      font-size: 1.2rem;
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .expertise-cat {
+      background: var(--grey-soft);
+      border-radius: 20px;
+      padding: 1.5rem;
+      border: 1px solid var(--grey-border);
+    }
+
+    .expertise-cat h4 {
+      color: var(--navy);
+      margin-bottom: 1.2rem;
+      border-bottom: 2px solid var(--gold-light);
+      padding-bottom: 0.5rem;
+    }
+
+    .expertise-cat ul {
+      list-style: none;
+    }
+
+    .expertise-cat li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .expertise-cat li i {
+      color: var(--gold);
+      font-size: 0.8rem;
+      margin-right: 0.3rem;
+    }
+
+    .achievement-block {
+      background: var(--white);
+      border: 2px solid var(--gold);
+      border-radius: 28px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 15px 30px rgba(180, 148, 92, 0.12);
+    }
+
+    .badge-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 600;
+      padding: 0.3rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .exp-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .exp-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      background: white;
+      border: 1.5px solid var(--grey-border);
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+    }
+
+    .exp-icon {
+      background: var(--navy);
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      border: 2px solid var(--gold);
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .edu-item {
+      background: var(--grey-soft);
+      padding: 1.5rem;
+      border-radius: 18px;
+      border-left: 5px solid var(--gold);
+      border: 1px solid var(--grey-border);
+      border-left-width: 5px;
+    }
+
+    .cert-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cert-item {
+      background: var(--grey-soft);
+      padding: 1.5rem;
+      border-radius: 18px;
+      border-left: 5px solid var(--gold);
+      border: 1px solid var(--grey-border);
+      border-left-width: 5px;
+    }
+
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .ref-item {
+      background: white;
+      border: 1px solid var(--grey-border);
+      border-radius: 24px;
+      padding: 1.8rem;
+      transition: all 0.3s ease;
+    }
+
+    .ref-item:hover {
+      border-color: var(--gold);
+      box-shadow: 0 10px 25px -8px rgba(180, 148, 92, 0.3);
+    }
+
+    .ref-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .ref-title {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .ref-org {
+      font-weight: 600;
+      color: var(--navy-light);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dashed var(--gold-light);
+    }
+
+    .ref-contact {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 0.6rem 0;
+      color: #2d3f57;
+      font-size: 0.95rem;
+    }
+
+    .ref-contact i {
+      color: var(--gold);
+      width: 1.25rem;
+    }
+
+    .ref-relation {
+      background: var(--gold-subtle, #f5efe2);
+      color: var(--navy);
+      font-size: 0.85rem;
+      padding: 0.2rem 1rem;
+      border-radius: 50px;
+      display: inline-block;
+      margin-top: 0.5rem;
+      border: 1px solid var(--gold-light);
+    }
+
+    .gold-accent {
+      color: var(--gold);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0.5rem 1rem;
+      border-top: 2px solid var(--grey-border);
+      color: #4b5d73;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 680px) {
+      .sticky-nav {
+        gap: 1rem;
+        padding: 0.6rem 0.5rem;
+        font-size: 0.85rem;
+        flex-wrap: wrap;
+      }
+      .container {
+        padding: 1.5rem 1rem;
+      }
+      .hero-grid {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- sticky nav -->
+  <nav class="sticky-nav">
+    <a href="#hero">Home</a>
+    <a href="#summary">Summary</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#rd">R&D</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#references">References</a>
+  </nav>
+
+  <main class="container">
+    <!-- HERO SECTION WITH YOUR IMAGE AND WORKING CV DOWNLOAD -->
+    <section id="hero">
+      <div class="card" style="padding: 2rem;">
+        <div class="hero-grid">
+          <div class="hero-left">
+            <!-- YOUR IMAGE -->
+            <img src="https://s3.bmp.ovh/2026/02/14/Vsd1fr6Y.jpg" class="profile-img" alt="Md Naimur Rashid">
+            <div class="btn-group">
+              <!-- WORKING CV DOWNLOAD LINK FROM GOOGLE DRIVE -->
+              <a href="https://drive.google.com/uc?export=download&id=1g8D8E3-CBwWc1ibr9yz-7mlJo_-snK4l" class="btn btn-primary" download><i class="fas fa-download"></i> Download CV</a>
+              <a href="#references" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+          </div>
+          <div class="hero-right">
+            <h1 style="font-size: 2.8rem; font-weight: 700; color: var(--navy); line-height: 1.2;">Md Naimur Rashid</h1>
+            <p style="font-size: 1.3rem; font-weight: 400; color: #2f4562; margin: 0.5rem 0 1rem;"><span class="gold-accent">◆</span> Senior Executive – Washing | Textile Engineer | Sustainable Wet Processing Specialist</p>
+            <p style="font-size: 1.1rem; font-style: italic; background: var(--grey-soft); padding: 0.8rem 1.2rem; border-radius: 50px; border: 1px solid var(--grey-border);"><i class="fas fa-quote-left" style="color: var(--gold);"></i> Driving Innovation in Garment Washing, Sustainable Dyeing & Industrial Process Optimization</p>
+            <div style="margin: 1.8rem 0 0.5rem;" id="contact-info">
+              <!-- ALL THREE PHONE NUMBERS -->
+              <div class="contact-line"><i class="fas fa-map-pin"></i> Dewan Market, Kuturia, Dairy Farm, Savar, Dhaka 1341</div>
+              <div class="contact-line"><i class="fas fa-mobile-alt"></i> 01984154464 | 01626282048 | 01794-086771</div>
+              <div class="contact-line"><i class="fas fa-envelope"></i> mdnaimurrashid752@gmail.com</div>
+              <div class="contact-line"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <section id="summary">
+      <h2>Professional Summary</h2>
+      <div class="card">
+        <p style="font-size: 1.2rem; font-weight: 300;">Motivated Textile Engineer with 3.7+ years of industrial experience in denim washing, garment finishing, and sustainable dyeing innovations. Currently serving as Senior Executive – Washing at Fakir Apparels Ltd. Proven expertise in process optimization, buyer compliance management (GAP, H&M, ZARA), rejection control, and chemical process development. Actively engaged in sustainable R&D with industrial-scale natural mordant development and research publication in progress.</p>
+      </div>
+    </section>
+
+    <!-- CORE TECHNICAL EXPERTISE -->
+    <section id="expertise">
+      <h2>Core Technical Expertise</h2>
+      <div class="expertise-grid">
+        <div class="expertise-cat"><h4><i class="fas fa-tshirt" style="color: var(--gold);"></i> Garment Washing</h4><ul><li><i class="fas fa-circle"></i> Enzyme Wash</li><li><i class="fas fa-circle"></i> Vintage / Aged Wash</li><li><i class="fas fa-circle"></i> Acid Wash</li><li><i class="fas fa-circle"></i> Indigo Wash</li><li><i class="fas fa-circle"></i> Silicone Softener Wash</li><li><i class="fas fa-circle"></i> PP Spray, CPD & Localized Effects</li></ul></div>
+        <div class="expertise-cat"><h4><i class="fas fa-water" style="color: var(--gold);"></i> Denim Washing</h4><ul><li><i class="fas fa-circle"></i> Enzyme Wash</li><li><i class="fas fa-circle"></i> Stone Wash</li><li><i class="fas fa-circle"></i> Softner Wash</li><li><i class="fas fa-circle"></i> Acid Wash (Denim)</li><li><i class="fas fa-circle"></i> Vintage Aged Denim</li><li><i class="fas fa-circle"></i> PP Spray Effects</li></ul></div>
+        <div class="expertise-cat"><h4><i class="fas fa-palette" style="color: var(--gold);"></i> Dyeing & Effects</h4><ul><li><i class="fas fa-circle"></i> Pigment Dyeing</li><li><i class="fas fa-circle"></i> Reactive Dyeing</li><li><i class="fas fa-circle"></i> Direct Dyeing</li><li><i class="fas fa-circle"></i> Tie-Dye & Dip-Dye</li><li><i class="fas fa-circle"></i> Burnout Dyeing</li><li><i class="fas fa-circle"></i> Pigment Chalk Method</li></ul></div>
+        <div class="expertise-cat"><h4><i class="fas fa-industry" style="color: var(--gold);"></i> Production & Technical</h4><ul><li><i class="fas fa-circle"></i> Textile Dyeing Process</li><li><i class="fas fa-circle"></i> Finishing & Fabric Dev.</li><li><i class="fas fa-circle"></i> Machine Troubleshooting</li><li><i class="fas fa-circle"></i> Chemical Selection</li><li><i class="fas fa-circle"></i> Production Planning</li><li><i class="fas fa-circle"></i> Rejection & Compliance</li></ul></div>
+      </div>
+    </section>
+
+    <!-- R&D HIGHLIGHT -->
+    <section id="rd">
+      <h2>Industrial R&D Project</h2>
+      <div class="achievement-block">
+        <span class="badge-gold"><i class="fas fa-flask"></i> BUET Certified · bulk approved H&M, ZARA</span>
+        <h3 style="font-size: 1.9rem; font-weight: 600;">Industrial-Scale Natural Mordant Development</h3>
+        <p style="font-size: 1.2rem;">Independently developed natural mordants from <strong>Betel Nut, Banana Peel, Guava Leaves</strong>.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1.8rem;">
+          <ul style="flex:1; list-style: none;">
+            <li><i class="fas fa-check-circle" style="color: var(--gold);"></i> Full R&D trials, lab experimentation & optimization</li>
+            <li><i class="fas fa-check-circle" style="color: var(--gold);"></i> Standardized formulation & scale-up to bulk</li>
+            <li><i class="fas fa-check-circle" style="color: var(--gold);"></i> Commercial production for H&M, ZARA – full approval</li>
+          </ul>
+          <ul style="flex:1; list-style: none;">
+            <li><i class="fas fa-check-circle" style="color: var(--gold);"></i> Reduced synthetic chemicals, maintained export quality</li>
+            <li><i class="fas fa-check-circle" style="color: var(--gold);"></i> Research paper in progress (Elsevier track)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE -->
+    <section id="experience">
+      <h2>Work Experience</h2>
+      <div class="exp-cards">
+        <div class="exp-card">
+          <div class="exp-icon"><i class="fas fa-industry"></i></div>
+          <div class="exp-content">
+            <h3>Senior Executive – Washing <span style="color: var(--gold); font-weight: 400;">| Nov 2025 – present</span></h3>
+            <p><i class="fas fa-building" style="color: var(--gold);"></i> Fakir Apparels Ltd. · BSCIC Narayanganj</p>
+            <ul style="margin-top: 0.8rem; columns: 2; list-style: square; padding-left: 1.2rem;">
+              <li>Lead washing production operations</li><li>Control chemical processes & parameters</li><li>Ensure buyer compliance (GAP, H&M, ZARA)</li><li>Optimize efficiency & reduce rejection</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-icon"><i class="fas fa-user-tie"></i></div>
+          <div class="exp-content">
+            <h3>Denim Washing Executive – Production (GAP) <span style="color: var(--gold);">| Aug 2022 – Nov 2025</span></h3>
+            <p><i class="fas fa-building" style="color: var(--gold);"></i> Blue Creations Limited · Jitar Mor, Kashimpur</p>
+            <ul style="margin-top: 0.8rem; columns: 2; list-style: square; padding-left: 1.2rem;">
+              <li>Managed washing production & shift teams</li><li>Rejection / rework control & daily planning</li><li>GAP buyer compliance handling</li><li>Chemical expertise for consistent quality</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2>Education & Credentials</h2>
+      <div class="edu-grid">
+        <div class="edu-item"><i class="fas fa-graduation-cap gold-accent"></i> <strong>EMBA (PGD in Garments Business)</strong><br>IBA, Dhaka University · Enrolled 2026</div>
+        <div class="edu-item"><i class="fas fa-graduation-cap gold-accent"></i> <strong>BSc Textile Engineering (Wet Processing)</strong><br>BUFT · CGPA 3.6/4.00 (2023)</div>
+        <div class="edu-item"><i class="fas fa-flask gold-accent"></i> <strong>HSC Science</strong><br>Bangladesh Navy College · CGPA 4.92/5.00 (2018)</div>
+        <div class="edu-item"><i class="fas fa-flask gold-accent"></i> <strong>SSC Science</strong><br>Bangladesh Navy School · CGPA 5.00/5.00 (2016)</div>
+      </div>
+    </section>
+
+    <!-- TRAINING -->
+    <section id="training">
+      <h2>Training & Research</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
+        <div class="card" style="flex:1;"><i class="fas fa-leaf gold-accent"></i> <strong>Internship:</strong> Anowara Knit Composite (2 months) – Knitting, Dyeing, Finishing</div>
+        <div class="card" style="flex:1;"><i class="fas fa-book-open gold-accent"></i> <strong>Elsevier Research (2 yrs):</strong> Sustainable Polymers & Biopolymers</div>
+        <div class="card" style="flex:1;"><i class="fas fa-droplet gold-accent"></i> <strong>Thesis (8 mo):</strong> Textile Dye Recovery</div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <h2>Professional Certifications</h2>
+      <div class="cert-list">
+        <div class="cert-item"><i class="fas fa-certificate gold-accent"></i> Sustainable Dyeing – Society of Dyers and Colourists</div>
+        <div class="cert-item"><i class="fas fa-certificate gold-accent"></i> Textile Care Labelling – SDC</div>
+        <div class="cert-item"><i class="fas fa-certificate gold-accent"></i> Critical Thinking – Cambridge University</div>
+        <div class="cert-item"><i class="fas fa-certificate gold-accent"></i> Colour Management for Print – SDC</div>
+        <div class="cert-item"><i class="fas fa-certificate gold-accent"></i> Principles of Printed Textiles – SDC</div>
+      </div>
+    </section>
+
+    <!-- LANGUAGE & CAREER -->
+    <section>
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
+        <div class="card" style="flex: 1;">
+          <h3><i class="fas fa-language gold-accent"></i> Language</h3>
+          <p>Bangla – High (R/W/S) <br> English – High (R/W/S)</p>
+        </div>
+        <div class="card" style="flex: 2;">
+          <h3><i class="fas fa-briefcase gold-accent"></i> Career Info</h3>
+          <p><strong>Looking For:</strong> Top-Level Position · Full Time · Textile / Garments / Dyeing Factory · Anywhere in Bangladesh</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERENCES - UPDATED WITH YOUR NEW REFERENCES -->
+    <section id="references">
+      <h2>References</h2>
+      <div class="ref-grid">
+        <!-- Reference 1: Lt. Commander Haroonur Rashid -->
+        <div class="ref-item">
+          <div class="ref-name">Lt. Commander Haroonur Rashid</div>
+          <div class="ref-org">Bangladesh Navy</div>
+          <div class="ref-title">Commanding Officer, BNS Hatia</div>
+          <div class="ref-contact"><i class="fas fa-phone"></i> 01688-363425</div>
+          <div class="ref-relation"><i class="fas fa-heart" style="color: var(--gold); font-size: 0.8rem;"></i> Father</div>
+        </div>
+
+        <!-- Reference 2: Raju Ahmed Rajon -->
+        <div class="ref-item">
+          <div class="ref-name">Raju Ahmed Rajon</div>
+          <div class="ref-org">Blue Creations Ltd.</div>
+          <div class="ref-title">General Manager - Production & Technical</div>
+          <div class="ref-contact"><i class="fas fa-envelope"></i> rajon@bluecreationsltd.com</div>
+          <div class="ref-contact"><i class="fas fa-phone-alt"></i> +88 01683-170415</div>
+          <div class="ref-contact"><i class="fab fa-whatsapp" style="color: #25D366;"></i> WhatsApp: +88 01683-170415</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2025 Md Naimur Rashid – Senior Textile Professional. All rights reserved. <br> <span style="color: var(--gold);">navy · white · grey · gold</span></p>
+    </footer>
+  </main>
+</body>
+</html>
